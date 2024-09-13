@@ -1,0 +1,30 @@
+{
+  "name": "llm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@huggingface/inference": "^2.8.0",
+    "@mlc-ai/web-llm": "^0.2.62",
+    "@mlc-ai/web-tokenizers": "^0.1.5",
+    "@samagra-x/stencil-cli": "^0.0.5",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "openai": "^4.58.2"
+  }
+}
