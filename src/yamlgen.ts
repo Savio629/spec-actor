@@ -18,7 +18,7 @@ export function convertCommandToYAML(stencilCommand: string): string {
   const packageManager = packageManagerMatch ? packageManagerMatch[1] : "npm";
 
   const tooling: string[] = [];
-  const options = ["prisma","logging","user-service", "monitoring", "monitoringService", "temporal", "fileUpload"];
+  const options = ["prisma","user-service", "monitoring", "temporal", "fileUpload"];
   options.forEach(option => {
     if (stencilCommand.includes(`--${option} yes`)) {
       tooling.push(option);
@@ -46,5 +46,5 @@ endpoints:
 export function writeYAMLToFile(yamlContent: string, fileName: string) {
   const filePath = path.join(process.cwd(), fileName);
   fs.writeFileSync(filePath, yamlContent, "utf-8");
-  console.log(`YAML content written to ${filePath}`);
+  console.log(`Specification file written to ${filePath}`);
 }
