@@ -1,7 +1,6 @@
 import * as yaml from 'js-yaml';
 
 export const testCases = [
-  // Existing test cases
   {
     prompt: "Set up a project named BlogApp with npm and Prisma support",
     expectedYaml: {
@@ -115,7 +114,6 @@ export const testCases = [
     }
   },
 
-  // New test cases
   {
     prompt: "Create a project called EcoApp using npm with support for file upload and monitoring",
     expectedYaml: {
