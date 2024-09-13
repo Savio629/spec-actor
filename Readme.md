@@ -69,3 +69,7 @@ Generate a corresponding stencil command.
 Write a spec.yaml file with the relevant project configuration.
 
 Run the stencil spec command using the generated spec.yaml.
+
+### Demo
+https://github.com/user-attachments/assets/c2257f98-60ad-4531-9c55-71129c8d525b
+
