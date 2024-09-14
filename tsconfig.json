@@ -3,8 +3,8 @@
     "module": "esnext",
     "sourceMap": false,
     "target": "ES2022",  
-    "outDir": "./dist",
-    "baseUrl": "./src",
+    "outDir": "./",
+    "baseUrl": "./",
     "alwaysStrict": true,
     "noImplicitAny": true,
     "experimentalDecorators": true,
@@ -15,7 +15,8 @@
     "noEmit": false
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "bin/**/*.ts"
   ],
   "exclude": [
     "node_modules"

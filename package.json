@@ -2,6 +2,9 @@
   "name": "llm",
   "version": "1.0.0",
   "main": "index.js",
+  "bin": {
+    "specgpt": "bin/specgpt.js"
+  },
   "scripts": {
     "start": "node dist/index.js",
     "test": "jest --config test/jest-config.json",
