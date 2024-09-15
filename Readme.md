@@ -60,7 +60,23 @@ Then, execute the CLI with a user prompt:
 
 ### For example:
 
-    specgen "Set up a project named AllInOneService with Prisma, user service, monitoring, monitoring services, temporal, logging, and file upload setup with pnpm as the package installer"
+    specgen "Set up a project named AllInOneService with Prisma, user service, monitoring, temporal and file upload setup along with logging, monitoring, postgres,hasura, fusionauth and minio as docker service with npm as the package installer"
+
+### Spec File Structure
+```
+stencil: 0.0.1
+
+info:
+  properties:
+    project-name: "AllInOneService"
+    package-manager: "npm" 
+    
+tooling: [prisma,user-service,temporal,fileUpload,monitoring]
+
+docker: [monitoring,postgres,hasura,logging,fusionauth,minio]
+
+endpoints:
+```
 
 This will:
 
