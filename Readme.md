@@ -56,11 +56,11 @@ To run the CLI, first build the project:
 
 Then, execute the CLI with a user prompt:
 
-    node dist/index.js "<your-prompt-here>"
+   specgen "<your-prompt-here>"
 
 ### For example:
 
-    node dist/index.js "Set up a project named AllInOneService with Prisma, user service, monitoring, monitoring services, temporal, logging, and file upload setup with pnpm as the package installer"
+    specgen "Set up a project named AllInOneService with Prisma, user service, monitoring, monitoring services, temporal, logging, and file upload setup with pnpm as the package installer"
 
 This will:
 
