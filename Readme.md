@@ -56,11 +56,11 @@ To run the CLI, first build the project:
 
 Then, execute the CLI with a user prompt:
 
-   specgen "<your-prompt-here>"
+   specgpt "<your-prompt-here>"
 
 ### For example:
 
-    specgen "Set up a project named AllInOneService with Prisma, user service, monitoring, temporal and file upload setup along with logging, monitoring, postgres,hasura, fusionauth and minio as docker service with npm as the package installer"
+    specgpt "Set up a project named AllInOneService with Prisma, user service, monitoring, temporal and file upload setup along with logging, monitoring, postgres,hasura, fusionauth and minio as docker service with npm as the package installer"
 
 ### Spec File Structure
 ```
