@@ -80,9 +80,7 @@ endpoints:
 
 This will:
 
-Generate a corresponding stencil command.
-
-Write a spec.yaml file with the relevant project configuration.
+Generate a corresponding stencil spec file with the relevant project configuration.
 
 Run the stencil spec command using the generated spec.yaml.
 
