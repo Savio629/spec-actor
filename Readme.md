@@ -21,14 +21,29 @@ The CLI generates project initialization commands for the `stencil` framework ba
 
 The tool supports the following options:
 
-- Prisma (--prisma)
-- User Service (--user-service)
-- Monitoring (--monitoring)
-- Monitoring Service (--monitoringService)
-- Temporal (--temporal)
-- Logging (--logging)
-- File Upload (--fileUpload)
-- Package Manager (--package-manager: npm, pnpm, yarn or bun)
+#### Tooling: 
+- prisma
+- user-service 
+- monitoring 
+- temporal 
+- fileUpload 
+
+#### Package Manager
+- npm
+- pnpm
+- yarn
+- bun
+
+#### Docker Services
+- Tooling Setup
+  - logging
+  - monitoring
+  - temporal
+- Adhoc Setup
+  - postgres
+  - hasura
+  - fusionauth
+  - minio
 
 ### Linking the @samagra-x/stencil-cli Package
 
