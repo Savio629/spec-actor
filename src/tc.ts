@@ -32,12 +32,12 @@ export const testCases = [
     }
   },
   {
-    prompt: "Set up a project named BlogApp with yarn and user-service enabled with hasura as a docker service",
+    prompt: "Make me a project with yarn and user-service enabled with hasura as a docker service",
     expectedYaml: {
       stencil: "0.0.5",
       info: {
         properties: {
-          'project-name': "BlogApp",
+          'project-name': "Stencil-app",
           'package-manager': "yarn"
         }
       },
@@ -47,7 +47,7 @@ export const testCases = [
     }
   },
   {
-    prompt: "Set up a project named TaskManager with bun and minio and fusionauth for docker serivces along and file upload support",
+    prompt: "Configure a project named TaskManager with bun and minio and fusionauth along and file upload support",
     expectedYaml: {
       stencil: "0.0.5",
       info: {
@@ -62,13 +62,13 @@ export const testCases = [
     }
   },
   {
-    prompt: "Set up a project named SocialApp with prisma, Temporal, file upload, user service, and using installer pnpm",
+    prompt: "Set up a project with prisma as ORM, Temporal, file upload, user service",
     expectedYaml: {
       stencil: "0.0.5",
       info: {
         properties: {
-          'project-name': "SocialApp",
-          'package-manager': "pnpm"
+          'project-name': "Stencil-app",
+          'package-manager': "npm"
         }
       },
       tooling: ['prisma', 'temporal', 'file-upload', 'user-service'],
@@ -107,16 +107,16 @@ export const testCases = [
     }
   },
   {
-    prompt: "Set up a project named MediaApp with bun and user service",
+    prompt: "Generate a project with temporal as the only service",
     expectedYaml: {
       stencil: "0.0.5",
       info: {
         properties: {
-          'project-name': "MediaApp",
-          'package-manager': "bun"
+          'project-name': "Stencil-app",
+          'package-manager': "npm"
         }
       },
-      tooling: ['user-service'],
+      tooling: ['temporal'],
       docker: [],
       endpoints: null
     }
@@ -138,7 +138,7 @@ export const testCases = [
     }
   },
   {
-    prompt: "Initialize a project named DataAnalyzer with pnpm and Prisma, with no additional tooling and monitoring as a docker service",
+    prompt: "Initialize a project named DataAnalyzer with pnpm and Prisma and monitoring, with no additional tooling and monitoring as a docker service",
     expectedYaml: {
       stencil: "0.0.5",
       info: {
@@ -147,13 +147,13 @@ export const testCases = [
           'package-manager': "pnpm"
         }
       },
-      tooling: ['prisma'],
+      tooling: ['prisma', 'monitoring'],
       docker: ['monitoring'],
       endpoints: null
     }
   },
   {
-    prompt: "Start a new project called ChatApp with yarn, and include Temporal and user-service along with hasura, postgres as a docker service",
+    prompt: "Start a new project called ChatApp with yarn, and include Temporal and user-service along with hasura, postgres,temporal as a docker service",
     expectedYaml: {
       stencil: "0.0.5",
       info: {
@@ -163,18 +163,18 @@ export const testCases = [
         }
       },
       tooling: ['temporal', 'user-service'],
-      docker: ['hasura', 'postgres'],
+      docker: ['hasura', 'postgres', 'temporal'],
       endpoints: null
     }
   },
   {
-    prompt: "Setup a project named TaskManagerPro using bun with Prisma and file upload and a docker service for minio",
+    prompt: "Setup a project named TaskManagerPro with Prisma and file upload and a docker service for minio",
     expectedYaml: {
       stencil: "0.0.5",
       info: {
         properties: {
           'project-name': "TaskManagerPro",
-          'package-manager': "bun"
+          'package-manager': "npm"
         }
       },
       tooling: ['prisma', 'file-upload'],
@@ -198,7 +198,7 @@ export const testCases = [
     }
   },
   {
-    prompt: "Create a project named ReportGenerator with npm and enable Prisma and monitoring and docker services for postgres and fusionauth",
+    prompt: "Create a project named ReportGenerator with npm and enable Prisma, monitoring and temporal and docker services for postgres and fusionauth",
     expectedYaml: {
       stencil: "0.0.5",
       info: {
@@ -207,7 +207,7 @@ export const testCases = [
           'package-manager': "npm"
         }
       },
-      tooling: ['prisma', 'monitoring'],
+      tooling: ['prisma', 'monitoring', 'temporal'],
       docker: ['fusionauth', 'postgres'],
       endpoints: null
     }

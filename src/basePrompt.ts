@@ -22,24 +22,32 @@ export function constructBasePrompt(promptInput: PromptInput): string {
     docker: [<docker>]
     endpoints:
   
-    - Replace <ProjectName> with the name of the project extracted directly from the input.
-    - Replace <package-manager> with the specified package manager (npm, pnpm, yarn, bun).
-    - The tooling list should be in the following format: [prisma, temporal, file-upload, user-service, monitoring].
-    - The tooling list and docker list should be in lowercase.
-    - The docker list should be in the following format: [logging, monitoring, postgres, hasura, minio, fusionauth].
-    - Don't get confuse between monitoring of tooling and docker. They are different.
-    - Use "no" for any feature or service that is not requested and "yes" for those that are.
-    - If no tooling is mentioned skip the tooling section same for docker.
+  - Replace <ProjectName> with the name of the project extracted directly from the input, if provided. **If no project name is mentioned, leave the "project-name" field as an empty string (""). Do not provide a default name like "project".**
+  - Replace <package-manager> with the specified package manager (npm, pnpm, yarn, bun), if provided. If no package manager is mentioned, leave it as an empty string ("").
+  - The tooling list should only include services that are explicitly mentioned in the input. Valid tooling options are: [prisma, temporal, file-upload, user-service, monitoring]. Ensure that services mentioned in the input, such as "prisma", are correctly included in the tooling section.
+  - The docker list should only include services that are explicitly mentioned in the input. Valid docker options are: [logging, monitoring, temporal, postgres, hasura, minio, fusionauth]. If no docker services are mentioned, omit the "docker" section entirely.
+  - The tooling list and docker list should be in lowercase.
+  - If no tooling is mentioned, skip the tooling section; same for docker.
 
     Example:
-    - For "Set up a project named SocialApp with tooling such as prisma, temporal, file upload, user service, monitoring and docker service such as logging, monitoring, postgres, hasura, minio, fusionauth using installer pnpm", respond with:
+    - For "Set up a project named <ProjectName> with tooling such as <tooling> and docker service such as <docker> using installer of <package-manager>", respond with:
       stencil: 0.0.5
       info:
         properties:
-          project-name: "SocialApp"
-          package-manager: "pnpm"
-      tooling: [prisma, temporal, file-upload, user-service, monitoring]
-      docker: [logging, monitoring, postgres, hasura, minio, fusionauth]
+          project-name: "<ProjectName>"
+          package-manager: "<package-manager>"
+      tooling: [<tooling>]
+      docker: [<docker>]
+      endpoints:
+
+    - For "Generate me a project with monitoring and docker service for monitoring"
+      stencil: 0.0.5
+      info:
+        properties:
+          project-name: ""
+          package-manager: ""
+      tooling: [monitoring]
+      docker: [monitoring]
       endpoints:
     `;
   }

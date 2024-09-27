@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
+import * as yaml from "js-yaml";
 
 function getDependencyVersion(dependencyName: string): string {
   const packageJsonPath = path.join(process.cwd(), 'package.json');
@@ -45,6 +46,33 @@ endpoints:
 
 export function writeYAMLToFile(yamlContent: string, fileName: string) {
   const filePath = path.join(process.cwd(), fileName);
+  interface ParsedYaml {
+    info?: {
+      properties?: {
+        'project-name'?: string;
+        'package-manager'?: string;
+      };
+    };
+  }
+
+  try {
+    let parsedYaml = yaml.load(yamlContent) as ParsedYaml;
+  
+    if (parsedYaml?.info?.properties?.['project-name'] === "") {
+      parsedYaml.info.properties['project-name'] = 'Stencil-app';
+    }
+  
+    if (parsedYaml?.info?.properties?.['package-manager'] === "") {
+      parsedYaml.info.properties['package-manager'] = 'npm';
+    }
+  
+    yamlContent = yaml.dump(parsedYaml);
+  
+  } catch (e) {
+    console.error('Failed to parse YAML content:', e);
+  }
+  
+  
   fs.writeFileSync(filePath, yamlContent, "utf-8");
-  console.log(`Specification file written to ${filePath}`);
+  return yamlContent;
 }
